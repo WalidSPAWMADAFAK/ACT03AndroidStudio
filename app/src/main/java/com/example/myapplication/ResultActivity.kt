@@ -31,15 +31,28 @@ class ResultActivity : AppCompatActivity() {
 
         val resultado = findViewById<TextView>(R.id.resultat_imc)
         val categoria = findViewById<TextView>(R.id.categoria_imc)
+        val descripcion = findViewById<TextView>(R.id.descripcio_imc)
         val volver = findViewById<Button>(R.id.tornar)
 
         resultado.text = String.format("%.2f", imc)
 
-        categoria.text = when {
-            imc < 18.5 -> "PES BAIX"
-            imc < 25 -> "PES NORMAL"
-            imc < 30 -> "SOB REPES"
-            else -> "OBESITAT"
+        when {
+            imc < 18.5 -> {
+                categoria.text = "PES BAIX"
+                descripcion.text = "El teu IMC està per sota del rang habitual."
+            }
+            imc < 25 -> {
+                categoria.text = "PES NORMAL"
+                descripcion.text = "El teu IMC està dins del rang habitual."
+            }
+            imc < 30 -> {
+                categoria.text = "SOBREPÈS"
+                descripcion.text = "El teu IMC està per sobre del rang habitual."
+            }
+            else -> {
+                categoria.text = "OBESITAT"
+                descripcion.text = "El teu IMC està molt per sobre del rang habitual."
+            }
         }
 
         volver.setOnClickListener {

@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#101020"
+    android:background="#0A0C21"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -14,7 +14,7 @@
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/calcular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -22,21 +22,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="16dp"
+                android:paddingVertical="12dp"
                 android:text="B &amp; O BMI CALCULATOR"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="150dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -44,11 +44,11 @@
                     android:id="@+id/seleccio_home"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="6dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="#FFFFFF"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
+                    app:cardBackgroundColor="#111328"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -58,18 +58,19 @@
 
                         <ImageView
                             android:id="@+id/image_male"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:contentDescription="MASCULÍ"
                             android:src="@drawable/baseline_male_24"
-                            android:contentDescription="Hombre"
-                            android:tint="@color/black" />
+                            app:tint="#FFFFFF" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="HOMBRE"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
+                            android:layout_marginTop="8dp"
+                            android:text="HOME"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -80,11 +81,11 @@
                     android:id="@+id/seleccio_dona"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="6dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="#FFFFFF"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp">
+                    app:cardBackgroundColor="#111328"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -94,18 +95,19 @@
 
                         <ImageView
                             android:id="@+id/image_female"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:contentDescription="FEMENÍ"
                             android:src="@drawable/female_24dp_e3e3e3_fill0_wght400_grad0_opsz24"
-                            android:contentDescription="Mujer"
-                            android:tint="@color/black" />
+                            app:tint="#FFFFFF" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="MUJER"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
+                            android:layout_marginTop="8dp"
+                            android:text="DONA"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -114,158 +116,247 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:layout_marginTop="16dp"
-                android:background="#222238"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="20dp">
+                app:cardBackgroundColor="#111328"
+                app:cardCornerRadius="12dp"
+                app:strokeWidth="0dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ALÇADA"
-                    android:textColor="#BBBBCC"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/altura_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="170 cm"
-                    android:textColor="#FFFFFF"
-                    android:textSize="32sp"
-                    android:textStyle="bold" />
-
-                <SeekBar
-                    android:id="@+id/altura_seekbar"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:max="100"
-                    android:progress="50"
-                    android:contentDescription="Selecciona l'alçada en centímetres" />
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ALÇADA"
+                        android:textColor="#8D8E99"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/altura_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="170"
+                            android:textColor="#FFFFFF"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="cm"
+                            android:textColor="#8D8E99"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/altura_seekbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:contentDescription="ALÇADA"
+                        android:max="220"
+                        android:min="100"
+                        android:progress="170"
+                        android:progressTint="#6C63FF"
+                        android:thumbTint="#6C63FF" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="170dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <LinearLayout
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="6dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:background="#222238"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="PES"
-                        android:textColor="#BBBBCC"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/pes_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="70"
-                        android:textColor="#FFFFFF"
-                        android:textSize="32sp"
-                        android:textStyle="bold" />
+                    app:cardBackgroundColor="#111328"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="0dp">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/pes_menys"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:minWidth="0dp"
-                            android:text="−" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PES"
+                            android:textColor="#8D8E99"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
-                        <Button
-                            android:id="@+id/pes_mes"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:minWidth="0dp"
-                            android:text="+" />
+                        <TextView
+                            android:id="@+id/pes_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="70"
+                            android:textColor="#FFFFFF"
+                            android:textSize="36sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/pes_menys"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="8dp"
+                                android:insetLeft="0dp"
+                                android:insetTop="0dp"
+                                android:insetRight="0dp"
+                                android:insetBottom="0dp"
+                                android:padding="0dp"
+                                android:text="−"
+                                android:textColor="#FFFFFF"
+                                android:textSize="22sp"
+                                app:backgroundTint="#1C1F35"
+                                app:cornerRadius="24dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/pes_mes"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:insetLeft="0dp"
+                                android:insetTop="0dp"
+                                android:insetRight="0dp"
+                                android:insetBottom="0dp"
+                                android:padding="0dp"
+                                android:text="+"
+                                android:textColor="#FFFFFF"
+                                android:textSize="22sp"
+                                app:backgroundTint="#1C1F35"
+                                app:cornerRadius="24dp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
-                </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                <LinearLayout
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="6dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:background="#222238"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="EDAT"
-                        android:textColor="#BBBBCC"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/edat_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="18"
-                        android:textColor="#FFFFFF"
-                        android:textSize="32sp"
-                        android:textStyle="bold" />
+                    app:cardBackgroundColor="#111328"
+                    app:cardCornerRadius="12dp"
+                    app:strokeWidth="0dp">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/edat_menys"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:minWidth="0dp"
-                            android:text="−" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="EDAT"
+                            android:textColor="#8D8E99"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
-                        <Button
-                            android:id="@+id/edat_mes"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:minWidth="0dp"
-                            android:text="+" />
+                        <TextView
+                            android:id="@+id/edat_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="18"
+                            android:textColor="#FFFFFF"
+                            android:textSize="36sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/edat_menys"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="8dp"
+                                android:insetLeft="0dp"
+                                android:insetTop="0dp"
+                                android:insetRight="0dp"
+                                android:insetBottom="0dp"
+                                android:padding="0dp"
+                                android:text="−"
+                                android:textColor="#FFFFFF"
+                                android:textSize="22sp"
+                                app:backgroundTint="#1C1F35"
+                                app:cornerRadius="24dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/edat_mes"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:insetLeft="0dp"
+                                android:insetTop="0dp"
+                                android:insetRight="0dp"
+                                android:insetBottom="0dp"
+                                android:padding="0dp"
+                                android:text="+"
+                                android:textColor="#FFFFFF"
+                                android:textSize="22sp"
+                                app:backgroundTint="#1C1F35"
+                                app:cornerRadius="24dp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
-                </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
-
-            <Button
-                android:id="@+id/calcular"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:text="CALCULAR"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
         </LinearLayout>
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/calcular"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#6C63FF"
+        android:text="CALCULAR"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
